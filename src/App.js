@@ -23,14 +23,26 @@ function Logo() {
   );
 }
 
-function BestPokemon() {
-  return <p>My favourite Pokemon is Squirtle</p>;
-}
+const BestPokemon = () => {
+  const abilities = ["Anticipation", "Adaptability", "Run-Away"];
 
-function CaughtPokemon() {
-  var date = new Date().toLocaleDateString();
+  return (
+    <div>
+      <p>My favourite Pokemon</p>
+      <ul>
+        {abilities.map((element, index) => (
+          <li key={index}>{element}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+const CaughtPokemon = () => {
+  const date = new Date().toLocaleDateString();
+
   return <p>Caught 0 Pokemon on {date}</p>;
-}
+};
 
 const Weather = () => {
   const weatherData = {
